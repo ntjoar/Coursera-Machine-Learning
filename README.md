@@ -3,7 +3,7 @@
 ## About
 This repository is for my personal record keeping as I explore through Machine Learning. This repo contains answers to the exercises that are assigned in the project, but please only use this for inspiration only. Many of the walkthroughs in the resources do a wonderful job of explaining the code, so please check out those before looking here.
 
-Course credit goes to Coursera's Machine Learning course. You can find it [here](https://www.coursera.org/learn/machine-learning). 
+Course credit goes to Professor Ng's Machine Learning course on Coursera. You can find it [here](https://www.coursera.org/learn/machine-learning). 
 
 ## Dependencies
 - Octave v3.8.0
