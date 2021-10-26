@@ -26,8 +26,8 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-mu = mean(X); % Mean of all inputs
-sigma = std(X); % Standard deviation of all inputs
+mu = mean(X);               % Mean of all inputs
+sigma = std(X);             % Standard deviation of all inputs
 X_norm = (X - mu) ./ sigma; % Do an element division as necessary, remember original (X - mu) / sigma
 
 % ============================================================
