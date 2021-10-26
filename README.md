@@ -30,3 +30,14 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | Gradient descent for multiple variables | 0/0     |
 | Normal equations                        | 0/0     |
 | Total                                   | 100/100 |
+
+## Exercise 2
+| Criteria                             | Grade   | 
+|--------------------------------------|:-------:|
+| Sigmoid function                     | 5/5     |
+| Compute cost for logistic regression | 30/30   |
+| Gradient for logistic regression     | 30/30   |
+| Predict function                     | 5/5     |
+| Compute cost for regularized LR      | 15/15   |
+| Gradient for regularized LR          | 15/15   |
+| Total                                | 100/100 |
