@@ -17,11 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-    h = X * theta; % Find our h vector, X is m x n, theta is n x 1
-    error = h - y; % Find the error by doing h - y, y is m x 1 -> m x 1
-    delta = X' * error; % Find the delta by doing X transpose times error
+    h = X * theta;                        % Find our h vector, X is m x n, theta is n x 1
+    error = h - y;                        % Find the error by doing h - y, y is m x 1 -> m x 1
+    delta = X' * error;                   % Find the delta by doing X transpose times error
     theta_change = alpha * 1 / m * delta; % Find our change by multiplying delta by 1/m and alpha
-    theta = theta - theta_change; % Subtract, remember that this is done simultaneously in our Gradient descent equation
+    theta = theta - theta_change;         % Subtract, remember that this is done simultaneously in our Gradient descent equation
 
     % ============================================================
 

@@ -13,11 +13,11 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-h = X * theta; % Find our h vector, X is m x n, theta is n x 1
-error = h - y; % Find the error by doing h - y, y is m x 1 -> m x 1
+h = X * theta;          % Find our h vector, X is m x n, theta is n x 1
+error = h - y;          % Find the error by doing h - y, y is m x 1 -> m x 1
 error_sqr = error .^ 2; % Do an elementwise square as in the equation
-q = sum(error_sqr); % Find the sum of all elements
-J = 1 / (2 * m) * q; % Divide by 2 times the number of elements for fancy avg
+q = sum(error_sqr);     % Find the sum of all elements
+J = 1 / (2 * m) * q;    % Divide by 2 times the number of elements for fancy avg
 
 % =========================================================================
 

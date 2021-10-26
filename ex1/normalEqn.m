@@ -10,8 +10,8 @@ theta = zeros(size(X, 2), 1);
 %               to linear regression and put the result in theta.
 %
 
-X_sqr = X' * X; % X^T times X
-X_sqr_inv = pinv(X_sqr); % (X^T times X)^(-1)
+X_sqr = X' * X;             % X^T times X
+X_sqr_inv = pinv(X_sqr);    % (X^T times X)^(-1)
 theta = X_sqr_inv * X' * y; % (X^T times X)^(-1) * X^T * y
 
 % ============================================================
