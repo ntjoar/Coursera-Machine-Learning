@@ -20,11 +20,11 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-% Cost function 
-z = X * theta;                    % sigmoid(z)
-y_1 = y' * log(sigmoid(z));       % Find y=1 log
-y_0 = (1-y)' * log(1-sigmoid(z)); % Find y=0 log
-J = (-1) * (1 / m) * (y_1 + y_0); % Put it all together
+% Cost function  
+z = X * theta;                      % sigmoid(z)
+y_1 = y' * log(sigmoid(z));         % Find y=1 log
+y_0 = (1 - y)' * log(1-sigmoid(z)); % Find y=0 log
+J = (-1) * (1 / m) * (y_1 + y_0);   % Put it all together
 
 % Gradient descent
 error = sigmoid(z) - y;      % Find error displacement given
