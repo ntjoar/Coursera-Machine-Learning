@@ -30,11 +30,8 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
-
-
-
+h = X * all_theta';    % Get our hypothesis
+[a p] = max(h, [], 2); % Use max function to get prediction where index is prediction
 
 % =========================================================================
 

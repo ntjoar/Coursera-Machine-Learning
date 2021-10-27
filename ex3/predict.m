@@ -21,13 +21,18 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Layer 1
+a1 = [ones(m, 1) X]; % Construct a matrix with constant and input values X
 
+% Layer 2 
+z2 = a1 * Theta1';                       % Calculate each input to layer 2 nodes
+a2 = [ones(size(z2, 1), 1) sigmoid(z2)]; % Construct a matrix with constant and input values sigmoid(z2)
 
+% Layer 3
+z3 = a2 * Theta2'; % Calculate each input to layer 3 nodes
+a3 = sigmoid(z3);  % Construct a matrix with constant and input values z3
 
-
-
-
-
+[a, p] = max(a3, [], 2); % Find our max indices
 
 % =========================================================================
 

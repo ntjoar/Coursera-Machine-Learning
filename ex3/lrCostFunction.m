@@ -36,14 +36,26 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+% Cost function  
+z = X * theta;                      % sigmoid(z)
+y_1 = y' * log(sigmoid(z));         % Find y=1 log
+y_0 = (1 - y)' * log(1-sigmoid(z)); % Find y=0 log
+j = (-1) * (1 / m) * (y_1 + y_0);   % Put it all together
 
+% Gradient descent
+error = sigmoid(z) - y;      % Find error displacement given
+g = (1 / m) * X' * error; % Get the gradient without updating theta values
 
+% Regularized cost function is our old cost function plus our new one 
+summation = sum(theta .^ 2) - (theta(1) .^ 2); % Get the summation from 1 to n, without theta_0
+reg_cost = lambda / (2 * m) * (summation);     % Get the change needed
+J = j + reg_cost;                              % Add the changes needed
 
-
-
-
-
-
+% Regularized gradient descent
+t = theta;                % Stores what theta we want to add by
+scale = lambda / m;       % Scale lambda / m
+grad = g + scale * theta; % Grad is just the old g + the new factor lambda / m times theta_j
+grad(1) = g(1);           % Theta_0 stays the same, so reset this value to the original
 
 % =============================================================
 
