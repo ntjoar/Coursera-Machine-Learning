@@ -41,3 +41,12 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | Compute cost for regularized LR      | 15/15   |
 | Gradient for regularized LR          | 15/15   |
 | Total                                | 100/100 |
+
+## Exercise 3
+| Criteria                           | Grade   | 
+|------------------------------------|:-------:|
+| Regularized logistic regression    | 30/30   |
+| One-vs-all classifier training     | 20/20   |
+| One-vs-all classifier prediction   | 20/20   |
+| Neural network prediction function | 30/30   |
+| Total                              | 100/100 |
