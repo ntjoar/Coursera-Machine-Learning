@@ -61,31 +61,56 @@ Theta2_grad = zeros(size(Theta2));
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
+% -------------------------------------------------------------
 
+% Find our cost function
+y0 = zeros(m,num_labels); % We need a y0 that stores 1 in correct location
+for i=1:m                 % Loop through all m 
+    y0(i,y(i)) = 1;       % Update prediction with one where it is needed
+end 
 
+h1 = sigmoid([ones(m, 1) X] * Theta1');  % Get the middle layer
+h2 = sigmoid([ones(m, 1) h1] * Theta2'); % Find the hypothesis
 
+J_0 = -(1 / m) * sum(sum(y0 .* log(h2) + (1 - y0) .* log(1 - h2)));                                       % Find our basic cost 
+Reg = (sum(sum(Theta1(:,2:size(Theta1,2)).^2)) + sum(sum(Theta2(:,2:size(Theta2,2)).^2)) )* lambda/(2*m); % Find our regularization value
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+J = J_0 + Reg; % Get our cost function total
 
 % -------------------------------------------------------------
+% Back propogation algorithm
+
+for t = 1:m
+    % Get the hypothesis values
+    a1 = [1; X(t,:)']; 
+    z2 = Theta1 * a1;
+    a2 = [1; sigmoid(z2)];
+    z3 = Theta2 * a2;
+    a3 = sigmoid(z3);
+
+    % Error calculation
+    yt = y0(t, :)';   % We only need y(t)
+    Delta3 = a3 - yt; % Find Error at output
+
+    % Back propogation
+    Delta2 = (Theta2' * Delta3) .* [1; sigmoidGradient(z2)];
+    Delta2 = Delta2(2:end);                                  
+
+    Theta1_grad = Theta1_grad + Delta2 * a1';
+    Theta2_grad = Theta2_grad + Delta3 * a2';
+end
+
+% Divide by m to get gradient
+Theta1_grad = Theta1_grad / m;
+Theta2_grad = Theta2_grad / m;
+
+% Add regularization terms
+Theta1_grad(:,2:end) = Theta1_grad(:,2:end) + (lambda / m) * Theta1(:,2:end);
+Theta2_grad(:,2:end) = Theta2_grad(:,2:end) + (lambda / m) * Theta2(:,2:end);
 
 % =========================================================================
 
 % Unroll gradients
-grad = [Theta1_grad(:) ; Theta2_grad(:)];
-
+grad = [Theta1_grad(:) ; Theta2_grad(:)]
 
 end
