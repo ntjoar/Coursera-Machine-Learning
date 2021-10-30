@@ -50,3 +50,13 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | One-vs-all classifier prediction   | 20/20   |
 | Neural network prediction function | 30/30   |
 | Total                              | 100/100 |
+
+## Exercise 4
+| Criteria                                       | Grade   | 
+|------------------------------------------------|:-------:|
+| Feedforward and cost function                  | 30/30   |
+| Regularized cost function                      | 15/15   |
+| Sigmoid gradient                               | 5/5     |
+| Neural net gradient function (backpropagation) | 40/40   |
+| Regularized gradient                           | 10/10   |
+| Total                                          | 100/100 |
