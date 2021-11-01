@@ -60,3 +60,13 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | Neural net gradient function (backpropagation) | 40/40   |
 | Regularized gradient                           | 10/10   |
 | Total                                          | 100/100 |
+
+## Exercise 5
+| Criteria                                    | Grade   | 
+|---------------------------------------------|:-------:|
+| Regularized linear regression cost function | 25/25   |
+| Regularized linear regression gradient      | 25/25   |
+| Learning curve                              | 20/20   |
+| Polynomial feature mapping                  | 10/10   |
+| Cross validation curve                      | 20/20   |
+| Total                                       | 100/100 |
