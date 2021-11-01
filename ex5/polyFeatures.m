@@ -15,10 +15,13 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
+% First row is always our first vector
+X_poly = X;
 
-
-
-
+for i = 1:(p-1)
+    append = X_poly(:,1) .^ (i+1); % Find the appended vector
+    X_poly = [X_poly append];      % Concat our two matrices
+end
 
 % =========================================================================
 

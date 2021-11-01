@@ -51,15 +51,14 @@ error_val   = zeros(m, 1);
 %       end
 %
 
-% ---------------------- Sample Solution ----------------------
+for i = 1:m
+    x_train = X(1:i, :); % Subset of our X values
+    y_train = y(1:i);    % Subset of our y values
 
-
-
-
-
-
-
-% -------------------------------------------------------------
+    [theta] = trainLinearReg(x_train, y_train, lambda);                     % Train the model
+    [error_train(i) g] = linearRegCostFunction(x_train, y_train, theta, 0); % Get our training error
+    [error_val(i)   g] = linearRegCostFunction(Xval, yval, theta, 0);       % Get our cross validation error
+end
 
 % =========================================================================
 
