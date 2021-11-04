@@ -48,12 +48,11 @@ x = zeros(n, 1);
 %
 %
 
-
-
-
-
-
-
+% Simply get each index and change the values to ones
+for i=1:length(word_indices)
+    id = word_indices(i);
+    x(id)=1;
+end
 
 % =========================================================================
     

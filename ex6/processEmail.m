@@ -97,14 +97,12 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
-
-
-
-
-
-
-
+    % Dictionary lookup, since not a hash, we have to do an iterative string comparison
+    for i=1:length(vocabList)
+        if strcmp(vocabList(i), str)
+            word_indices = [word_indices; i];
+        end
+    end
 
     % =============================================================
 

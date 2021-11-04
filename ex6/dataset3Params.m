@@ -23,11 +23,29 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+% Temp variables
+values = [0.01 0.03 0.1 0.3 1 3 10 30]; % Range of values to try for C and sigma
+err_small = 1;                          % Smallest error storage
 
+% Brute force every combination
+for i = 1:length(values)
+    for j = 1:length(values)
+        C_test = values(i);     % Assign C to test
+        sigma_test = values(j); % Assign sigma to test
 
+        % Train and get our error predictions
+        model = svmTrain(X, y, C_test, @(x1, x2) gaussianKernel(x1, x2, sigma_test)); 
+        predictions = svmPredict(model, Xval);
+        error = mean(double(predictions ~= yval));
 
-
-
+        % If error is small enough, replace the values
+        if error < err_small
+            C = C_test;
+            sigma = sigma_test;
+            err_small = error;
+        end
+    end
+end
 
 % =========================================================================
 
