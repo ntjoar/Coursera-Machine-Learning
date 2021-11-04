@@ -70,3 +70,12 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | Polynomial feature mapping                  | 10/10   |
 | Cross validation curve                      | 20/20   |
 | Total                                       | 100/100 |
+
+## Exercise 6
+| Criteria                            | Grade   | 
+|-------------------------------------|:-------:|
+| Gaussian Kernel                     | 25/25   |
+| Parameters (C, sigma) for Dataset 3 | 25/25   |
+| Email Preprocessing                 | 25/25   |
+| Email Feature Extraction            | 25/25   |
+| Total                               | 100/100 |
