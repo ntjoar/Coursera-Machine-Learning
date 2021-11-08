@@ -26,11 +26,22 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-
-
-
-
-
+for i=1:K
+    mean = zeros(K,n);
+    num = 0;
+    for j=1:length(idx)
+        if idx(j) == i
+            mean = mean(1,:) + X(j,:);
+            num = num + 1;
+        end
+    end
+    % Only calculate if we don't get a divide by zero error
+    if num > 0
+        centroids(i,:) = mean ./ num;
+    else
+        centroids(i,:) = K(i,:);
+    end
+end
 
 
 % =============================================================

@@ -21,11 +21,21 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
-
-
+% Basic algo to find minimum without storing
+for i=1:size(X,1)
+    minDistance = sum((X(i,:)-centroids(1,:)) .^ 2);  % Stores our minimum distance
+    minIndex = 1;                                     % Stores our minimum index needed
+    for j=2:size(centroids,1)
+        distance = sum((X(i,:)-centroids(j,:)) .^ 2); % Distanc calculated
+        % Replace if needed
+        if distance < minDistance
+            minDistance = distance;
+            minIndex = j;
+        end
+    end
+    % Write to idx
+    idx(i) = minIndex;
+end
 
 % =============================================================
 

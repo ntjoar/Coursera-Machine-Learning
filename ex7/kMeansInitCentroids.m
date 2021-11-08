@@ -13,12 +13,13 @@ centroids = zeros(K, size(X, 2));
 %               the dataset X
 %
 
+% Assuming K < length(X)
+r = randi([1 length(X)],1,K);
 
-
-
-
-
-
+% Assign r
+for i=1:length(r)
+    centroids(i,:) = X(i,:);
+end
 
 % =============================================================
 
