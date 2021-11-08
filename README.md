@@ -79,3 +79,13 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | Email Preprocessing                 | 25/25   |
 | Email Feature Extraction            | 25/25   |
 | Total                               | 100/100 |
+
+## Exercise 7
+| Criteria                         | Grade   | 
+|----------------------------------|:-------:|
+| Find Closest Centroids (k-Means) | 30/30   |
+| Compute Centroid Means (k-Means) | 30/30   |
+| PCA                              | 20/20   |
+| Project Data (PCA)               | 10/10   |
+| Recover Data (PCA)               | 10/10   |
+| Total                            | 100/100 |
