@@ -20,6 +20,7 @@ S = zeros(n);
 %       number of examples).
 %
 
+% Find sigma by doing X*X^T * 1/m
 sigma = X' * X / m
 [U,S,V] = svd(sigma);
 
