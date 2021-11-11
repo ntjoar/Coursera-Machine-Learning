@@ -23,17 +23,19 @@ for epsilon = min(pval):stepsize:max(pval)
     % Note: You can use predictions = (pval < epsilon) to get a binary vector
     %       of 0's and 1's of the outlier predictions
 
+    % Populate predictions
+    predictions = (pval < epsilon);
 
+    % Populate amounts of TP, FP, FN, and TN
+    truePos = sum((predictions == 1) & (yval == 1));
+    falsePos = sum((predictions == 1) & (yval == 0));
+    falseNeg = sum((predictions == 0) & (yval == 1));
+    trueNeg = sum((predictions == 0) & (yval == 0));
 
-
-
-
-
-
-
-
-
-
+    % Find precision and recall to calculate F1
+    precision = truePos / (truePos + falsePos);
+    recall = truePos / (truePos + falseNeg);
+    F1 = 2 * (precision * recall) / (precision + recall);
 
     % =============================================================
 
@@ -42,5 +44,4 @@ for epsilon = min(pval):stepsize:max(pval)
        bestEpsilon = epsilon;
     end
 end
-
 end

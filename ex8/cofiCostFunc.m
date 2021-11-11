@@ -40,20 +40,20 @@ Theta_grad = zeros(size(Theta));
 %                     partial derivatives w.r.t. to each element of Theta
 %
 
+% Cost function
+err = ((X * Theta' - Y) .* R);
+reg_x = sum(sum(X .^ 2)) * lambda / 2; 
+reg_Theta = sum(sum(Theta .^ 2)) * lambda / 2;
+reg = reg_x + reg_Theta;
+J = sum(sum(err .^ 2)) / 2 + reg;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+% Gradient descent
+X_grad = err * Theta;
+Theta_grad = err' * X;
+reg_X = lambda * X;
+reg_Theta = lambda * Theta;
+X_grad = X_grad + reg_X;
+Theta_grad = Theta_grad + reg_Theta;
 
 % =============================================================
 
