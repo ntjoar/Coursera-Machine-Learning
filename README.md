@@ -89,3 +89,14 @@ For Windows and Linux, please refer to [GNU Octave](https://www.gnu.org/software
 | Project Data (PCA)               | 10/10   |
 | Recover Data (PCA)               | 10/10   |
 | Total                            | 100/100 |
+
+## Exercise 8
+| Criteria                         | Grade   | 
+|----------------------------------|:-------:|
+| Estimate Gaussian Parameters     | 15/15   |
+| Select Threshold                 | 15/15   |
+| Collaborative Filtering Cost     | 20/20   |
+| Collaborative Filtering Gradient | 30/30   |
+| Regularized Cost                 | 10/10   |
+| Regularized Gradient             | 10/10   |
+| Total                            | 100/100 |
